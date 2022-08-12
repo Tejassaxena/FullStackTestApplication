@@ -1,34 +1,36 @@
-package com.aop.patient;
+package com.aop.pojo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Table
-@Entity
 public class PatientDetails {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer patientID;
 	private String patientName;
 	private String address;
 	private Long contact;
-	private Integer appointmentID;
+	private Integer age;
+	private Integer weight;
+	private String role;
 
 	public PatientDetails() {
 		super();
 	}
 
-	public PatientDetails(Integer patientID, String patientName, String address, Long contact, Integer appointmentID) {
+	public PatientDetails(Integer patientID, String patientName, String address, Long contact, Integer age,
+			Integer weight, String role) {
 		super();
 		this.patientID = patientID;
 		this.patientName = patientName;
 		this.address = address;
 		this.contact = contact;
-		this.appointmentID = appointmentID;
+		this.age = age;
+		this.weight = weight;
+		this.role = role;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	public Integer getPatientID() {
@@ -63,18 +65,26 @@ public class PatientDetails {
 		this.contact = contact;
 	}
 
-	public Integer getAppointmentID() {
-		return appointmentID;
+	public Integer getAge() {
+		return age;
 	}
 
-	public void setAppointmentID(Integer appointmentID) {
-		this.appointmentID = appointmentID;
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
+	public Integer getWeight() {
+		return weight;
+	}
+
+	public void setWeight(Integer weight) {
+		this.weight = weight;
 	}
 
 	@Override
 	public String toString() {
 		return "PatientDetails [patientID=" + patientID + ", patientName=" + patientName + ", address=" + address
-				+ ", contact=" + contact + ", appointmentID=" + appointmentID + "]";
+				+ ", contact=" + contact + ", age=" + age + ", weight=" + weight + "]";
 	}
 
 }
